@@ -9,81 +9,79 @@
     <title>Noticias</title>
 </head>
 <body>
-<h1 style='text-align: center;'>Fontes</h1>
+<h1 style='text-align: center;'>Editar Registro</h1>
 <br>
 
-
-<div style="text-align: center">
 
 <?php
 
 helper('form');
 
 echo form_open('fontes/update');
+$atributosInput = [
+    'type' => "text",
+    'class' => "form-control"
+  ];
+  
+  $attributes = [
+    'class' => "form-label"
+  ];
+  $usuario = [
+    'class' => "form-control",
+    'readonly' => "true"
+  ];
+  $ativar = [
+    'type' => "number",
+    'class' => "form-control"
+  ];
+
 
 
 echo form_hidden('id', $id);
 
 
+echo '<div class="mb-3">';
+echo "<b>";
+echo form_label('Digite aqui seu nome', 'nome', $attributes);
+echo "</b>";
+echo form_input('nome', $nome, $atributosInput);
+echo '</div>';
 
-echo form_label('Digite aqui seu nome', 'nome');
-echo '<br>';
-
-
-echo form_input('nome', $nome);
-echo '<br>';
-echo '<br>';
-
-
-
-echo form_label('URL do feed', 'url');
-echo '<br>';
-
-
-echo form_input('url', $url);
-echo '<br>';
-echo '<br>';
+echo '<div class="mb-3">';
+echo "<b>";
+echo form_label('URL do feed', 'url', $attributes);
+echo "</b>";
+echo form_input('url', $url, $atributosInput);
+echo '</div>';
 
 
+echo '<div class="mb-3">';
+echo "<b>";
+echo form_label('Deixe um comentário', 'comentario', $attributes);
+echo "</b>";
+echo form_input('comentario', $comentario, $atributosInput);
+echo '</div>';
 
-echo form_label('Deixe um comentário', 'comentario');
-echo '<br>';
+echo '<div class="mb-3">';
+echo "<b>";
+echo form_label('Deixe um horário para captacao do feed', 'horario', $attributes);
+echo "</b>";
+echo form_input('horario', $horario, $atributosInput);
+echo '</div>';
 
+echo '<div class="mb-3">';
+echo "<b>";
+echo form_label('Ativar ou desativar Fonte', 'ativado', $attributes);
+echo "</b>";
+echo form_input('ativado', $ativado, $ativar);
+echo '</div>';
 
-echo form_input('comentario', $comentario);
-echo '<br>';
-echo '<br>';
-
-
-echo form_label('Deixe um horário para captacao do feed', 'horario');
-echo '<br>';
-
-echo form_input('horario', $horario);
-echo '<br>';
-echo '<br>';
-
-
-echo form_label('Ativar ou desativar Fonte', 'ativado');
-echo '<br>';
-
-
-$extraFormInputs = array();
-$extraFormInputs['type'] = 'number';
-
-
-
-echo form_input('ativado', $ativado, $extraFormInputs);
-echo '<br>';
-echo '<br>';
-
-
-echo form_label('ultimoUsuario', 'ultimoUsuario');
-echo '<br>';
-
-
-echo form_input('ultimoUsuario', 'ultimoUsuario', ['readonly' => 'true']);
-echo '<br>';
-echo '<br>';
+echo '<div class="mb-3">';
+echo "<b>";
+echo form_label('ultimoUsuario', 'ultimoUsuario', $attributes);
+echo "</b>";
+echo form_input('ultimoUsuario', 'ultimoUsuario', $usuario);
+echo '</div>';
 
 ?>
 

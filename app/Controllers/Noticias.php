@@ -170,5 +170,13 @@ class Noticias extends BaseController
 			
 		
 	}
+
+
+	public function menu()
+	{
+        
+    echo view('Home');
+    }
+
 }
 ?>

@@ -1,4 +1,4 @@
-<?php echo $this -> extend('tema'); ?>
+<?= $this -> extend('tema'); ?>
 <?php echo $this ->section('ConteudoPrincipal'); ?>
 
 
@@ -13,54 +13,53 @@
 <body>
 <h1 style='text-align: center;'> Atualizar Noticias</h1>
 
-
-
-<div style="text-align: center">
-
-
-
 <?php
 helper('form');
 
 
 echo form_open('noticias/update');
 
+$atributosInput = [
+    'type' => "text",
+    'class' => "form-control",
+  
+    'placeholder' => "Digite aqui seu nome",
+    'name' => "nome",
+    'id' => 'nome'
+  ];
+  
+  
+  $attributes = [
+    'class' => "form-label"
+  ];
+
+
 echo form_hidden('id', $id);
 
 
 
-$attributes = [
-    'class' => 'labels',
-    'style' => 'color: Blue'
-];
 
-echo '<br>';
-
-
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('Titulo Noticia', 'titulo', $attributes);
-echo '<br>';
-echo form_input('titulo', $titulo);
+echo "</b>";
+echo form_input('titulo', $titulo, $atributosInput);
+echo '</div>';
 
-echo '<br>';
-
+echo '<div class="mb-3">';
+echo '<b>';
 echo form_label('Link da Noticia', 'link', $attributes);
-echo '<br>';
-echo form_input('link', $link);
+echo '</b>';
+echo form_input('link', $link, $atributosInput);
+echo "</div>";
 
-echo '<br>';
 
-
-echo '<br>';
-
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('Ultimo Usuario', 'ultimoUsuario', $attributes);
-echo '<br>';
-echo form_input('ultimoUsuario', $ultimoUsuario, ['readonly' => 'true']);
-
-echo '<br>';
-echo '<br>';
-
-
-
+echo "</b>";
+echo form_input('ultimoUsuario', $ultimoUsuario, $atributosInput);
+echo "</div>";
 
 ?>
 
@@ -77,5 +76,5 @@ echo form_close();
 </html>
 
 
-<?php echo $this->endSection(); ?>
+<?= $this->endSection(); ?>
 

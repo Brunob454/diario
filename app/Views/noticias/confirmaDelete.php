@@ -24,46 +24,52 @@ helper('form');
 
 echo form_open('noticias/delete');
 
+$attributes = [
+    'class' => "form-label"
+  ];
+$atributosInput = [
+    'type' => "text",
+    'class' => "form-control",
+    'readonly' => 'true',
+    'placeholder' => "Digite aqui seu nome",
+    'name' => "nome",
+    'id' => 'disabledTextInput'
+  ];
+
 echo form_hidden('id', $id);
 
-
-
-$attributes = [
-    'class' => 'labels',
-    'style' => 'color: Blue'
-];
-
 echo '<br>';
 
-
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('Titulo Noticia', 'titulo', $attributes);
-echo '<br>';
-echo form_input('titulo', $titulo);
+echo "</b>";
+echo form_input('titulo', $titulo, $atributosInput);
+echo "</div>";
 
-echo '<br>';
 
+
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('Link da Noticia', 'link', $attributes);
-echo '<br>';
-echo form_input('link', $link);
+echo "</b>";
+echo form_input('link', $link, $atributosInput);
+echo "</div>";
 
 
-echo '<br>';
 
-
-echo '<br>';
-
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('Ultimo Usuario', 'ultimoUsuario', $attributes);
-echo '<br>';
-echo form_input('ultimoUsuario', $ultimoUsuario, ['readonly' => 'true']);
+echo "</b>";
+echo form_input('ultimoUsuario', $ultimoUsuario, $atributosInput);
+echo "</div>";
 
-echo '<br>';
-echo '<br>';
-
+echo "<br>";
 
 echo "Tem certeza que deseja deletar estes dados?";
 
-echo '<br>';
-echo '<br>';
+echo "<br>";
 
 ?>
 

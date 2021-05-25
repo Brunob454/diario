@@ -4,13 +4,15 @@ namespace App\Controllers;
 
 class Fontes extends BaseController
 {
+
+	
+	
 	public function read()
 	{
 		$model = new \App\Models\ModelFontes();
 
 		$data["tabela"] = $model->findAll();
 		$data["teste"] = time();
-
 
 		foreach ($data["tabela"] as $key => $value) {
 			$data["tabela"][$key]["btnEditar"] = "<a class='btn btn-outline-primary' href='updateInit/".
@@ -19,6 +21,7 @@ class Fontes extends BaseController
 																						$data["tabela"][$key]["id"]."'>Deletar Registro</a>";
 		}
 
+	
 	echo view('fontesView', $data);
 
 	

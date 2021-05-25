@@ -1,9 +1,6 @@
 <?php echo $this -> extend('tema'); ?>
 <?php echo $this ->section('ConteudoPrincipal'); ?>
 
-
-<!DOCTYPE html>
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -16,44 +13,63 @@
 
 
 
-<div style="text-align: center">
+
 <?php
 helper('form');
 
 
 echo form_open('noticias/inserir');
 
-$attributes = [
-    'class' => 'labels',
-    'style' => 'color: Blue'
-];
+$atributosInput = [
+    'type' => "text",
+    'class' => "form-control",
+  
+    'placeholder' => "Digite aqui seu nome",
+    'name' => "nome",
+    'id' => 'nome'
+  ];
+  
+  
+  $attributes = [
+    'class' => "form-label",
+  ];
+
+  $ultiUsu = [
+      'class' => "form-control",
+      'readonly' => "true"
+  ];
 
 echo '<br>';
 
-
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('Titulo Noticia', 'titulo', $attributes);
-echo '<br>';
-echo form_input('titulo');
+echo "</b>";
 
-echo '<br>';
+$atributosInput['id'] = "titulo";
+$atributosInput['name'] = "titulo";
+$atributosInput['placeholder'] = "Digite aqui o titulo da noticia";
 
+echo form_input($atributosInput);
+echo "</div>";
+
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('Link da Noticia', 'link', $attributes);
-echo '<br>';
-echo form_input('link');
+echo "</b>";
+
+$atributosInput['id'] = "link";
+$atributosInput['name'] = "link";
+$atributosInput['placeholder'] = "Digite aqui o link da noticia";
+
+echo form_input($atributosInput);
+echo "</div>";
 
 
-echo '<br>';
-
-
-echo '<br>';
-
+echo '<div class="mb-3"';
 echo form_label('Ultimo Usuario', 'ultimoUsuario', $attributes);
-echo '<br>';
-echo form_input('ultimoUsuario', 'ultimoUsuario', ['readonly' => 'true']);
-
-echo '<br>';
-echo '<br>';
-
+echo form_input('ultimoUsuario', 'ultimoUsuario', $ultiUsu);
+echo "</div>";
 ?>
 
 <input type="submit" name="btnEnvia" value="Enviar" class="btn btn-outline-primary"/>
@@ -62,7 +78,7 @@ echo '<br>';
 <?php
 echo form_close();
 ?>
-    </div>
+    
 </body>
 </html>
 

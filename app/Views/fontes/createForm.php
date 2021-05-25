@@ -9,77 +9,120 @@
     <title>Noticias</title>
 </head>
 <body>
-<h1 style='text-align: center;'>Fontes</h1>
+<h1 style='text-align: center;'>Adicioanr Fontes</h1>
 <br>
-
-
-<div style="text-align: center">
 
 <?php
 helper('form');
 
+$atributosInput = [
+    'type' => "text",
+    'class' => "form-control",
+  
+    'placeholder' => "Digite aqui seu nome",
+    'name' => "nome",
+    'id' => 'nome'
+  ];
+  
+  $attributes = [
+    'class' => "form-label"
+  ];
+  $usuario = [
+    'class' => "form-control",
+    'placeholder' => "ultimoUsuario",
+    'name' => "nome",
+    'id' => 'nome'
+  ];
 
-
-$attributes = [
-    'class' => 'labels',
-    'style' => 'color: Blue'
-];
-
-
+  $ativar = [
+    'type' => "number",
+    'class' => "form-control",
+  
+    'placeholder' => "Digite aqui seu nome",
+    'name' => "nome",
+    'id' => 'nome'
+  ];
 
 echo form_open('fontes/createBe');
 
+
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('Digite aqui seu nome', 'nome', $attributes);
-echo '<br>';
+echo "</b>";
+$atributosInput['id'] = "nome";
+$atributosInput['name'] = "nome";
+$atributosInput['placeholder'] = "Digite aqui seu nome";
 
-echo form_input('nome', 'Digite aqui o seu nome');
-echo '<br>';
-echo '<br>';
+echo form_input($atributosInput);
+echo "</div>";
 
+
+
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('URL do feed', 'url', $attributes);
-echo '<br>';
+echo "</b>";
+$atributosInput['id'] = "url";
+$atributosInput['name'] = "url";
+$atributosInput['placeholder'] = "URL do feed";
 
-echo form_input('url', 'URL do feed');
-echo '<br>';
-echo '<br>';
+echo form_input($atributosInput);
+echo "</div>";
 
 
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('Deixe um comentário', 'comentario', $attributes);
-echo '<br>';
+echo "</b>";
+$atributosInput['id'] = "comentario";
+$atributosInput['name'] = "comentario";
+$atributosInput['placeholder'] = "Deixe um comentário";
 
-echo form_input('comentario', 'Deixe um comentário ');
-echo '<br>';
-echo '<br>';
+echo form_input($atributosInput);
+echo "</div>";
 
 
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('Deixe um horário para captacao do feed', 'horario', $attributes);
-echo '<br>';
-echo form_input('horario', 'Deixe um horário para captacao do feed');
-echo '<br>';
-echo '<br>';
+echo "</b>";
+$atributosInput['id'] = "horario";
+$atributosInput['name'] = "horario";
+$atributosInput['placeholder'] = "Deixe um horário para captacao do feed";
 
+echo form_input($atributosInput);
+echo "</div>";
+
+
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('Ativar ou desativar Fonte', 'ativado', $attributes);
-echo '<br>';
+echo "</b>";
+$ativar['id'] = "ativado";
+$ativar['name'] = "ativado";
+$atrivar['placeholder'] = "Ativar ou desativar Fonte";
+
+echo form_input($ativar);
+echo "</div>";
 
 
-$extraFormInputs = array();
-$extraFormInputs['type'] = 'number';
-
-
-echo form_input('ativado', 'Ativar ou desativar Fonte', $extraFormInputs);
-echo '<br>';
-echo '<br>';
-
+echo '<div class="mb-3">';
+echo "<b>";
 echo form_label('ultimoUsuario', 'ultimoUsuario', $attributes);
-echo '<br>';
-echo form_input('ultimoUsuario', 'ultimoUsuario', ['readonly' => 'true']);
-echo '<br>';
-echo '<br>';
+echo "</b>";
+$atributosInput['id'] = "ultimoUsuario";
+$atributosInput['name'] = "ultimoUsuario";
+$atributosInput['placeholder'] = "ultimoUsuario";
+
+echo form_input($usuario);
+echo "</div>";
+
 
 echo '<br>';
 ?>
 
-<input type="submit" name="btnEnvia" value="Enviar" class="btn btn-outline-primary"/>
+<input type="submit" name="btnEnvia" value="Enviar" class="btn btn-outline-primary" />
 
 <?php
 echo form_close();
