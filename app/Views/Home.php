@@ -30,7 +30,7 @@
         <font style="vertical-align: inherit;">
         <font style="vertical-align: inherit;">
          O Diario Técnologico é um trabalho escolar da Etec Ermelinda, ele foi feito com o CodeIgniter que é um framework de desenvolvimento de aplicações php e
-         com o Bootstrap que também é um framework porém é usado para o design, o site serve para armazenar noticias e fontes.
+         com o Bootstrap que também é um framework porém é usado para o design, o site serve para armazenar noticias e fontes num banco de dados SQLite3.
         </font></font></p>
       </div>
 
