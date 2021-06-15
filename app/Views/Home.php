@@ -21,9 +21,13 @@
      <img src="http://2.bp.blogspot.com/-XiMuRF2uafk/VUQkbriuMMI/AAAAAAAAAJg/xk41YtbJE1E/s1600/codeigniter-logo.png" class="img-fluid mb-3 mb-md-0">
     </div>
 
+  
 
 
     <div class="col-md-8 order-md-1 col-lg-7 text-center text-md-start">
+        <h2 class=mb-5> Usuario Logado: <?=$usersInfo['Usuario'];?></h2>
+
+
         <h1 class="mb-3"><font style="vertical-align: inherit;">
         <font style="vertical-align: inherit;">Site criado para amarzenar Noticias</font></font></h1>
         <p class="lead mb-4">

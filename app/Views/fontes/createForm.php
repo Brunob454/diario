@@ -9,7 +9,7 @@
     <title>Noticias</title>
 </head>
 <body>
-<h1 style='text-align: center;'>Adicioanr Fontes</h1>
+<h1 style='text-align: center;'>Adicionar Fontes</h1>
 <br>
 
 <?php

@@ -26,8 +26,8 @@
             Fontes
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="http://localhost/diario/public/index.php/fontes/read">Visualizar Dados</a></li>
-            <li><a class="dropdown-item" href="http://localhost/diario/public/index.php/fontes/createInit">Inserir Dados</a></li>
+            <li><a class="dropdown-item" href="http://localhost/diario/public/fontes/read">Visualizar Dados</a></li>
+            <li><a class="dropdown-item" href="http://localhost/diario/public/fontes/createInit">Inserir Dados</a></li>
           </ul>
         </li>
 
@@ -37,11 +37,16 @@
             Noticias
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="http://localhost/diario/public/index.php/noticias/index">Visualizar Dados</a></li>
-            <li><a class="dropdown-item" href="http://localhost/diario/public/index.php/noticias/addDados">Inserir Dados</a></li>
+            <li><a class="dropdown-item" href="http://localhost/diario/public/noticias/read">Visualizar Dados</a></li>
+            <li><a class="dropdown-item" href="http://localhost/diario/public/noticias/addDados">Inserir Dados</a></li>
+            
           </ul>
         </li>
+        
       </ul>
+      
+      
+      <a class="btn btn-outline-dark" href="<?= site_url('/Login/logout');?>">Sair</a>
       
     </div>
   </div>

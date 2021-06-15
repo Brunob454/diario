@@ -6,6 +6,12 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('Home.php');
+		$model = new \App\Models\ModelCad();
+		$UsuarioLogadoId = session()->get('UsuarioLogado');
+		$usersInfo = $model->find($UsuarioLogadoId);
+		$data = [
+			'usersInfo'=>$usersInfo
+		];
+		return view('Home.php', $data);
 	}
 }

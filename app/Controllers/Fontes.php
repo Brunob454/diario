@@ -21,6 +21,12 @@ class Fontes extends BaseController
 																						$data["tabela"][$key]["id"]."'>Deletar Registro</a>";
 		}
 
+		$session = session();
+
+		$session->set('ultimoAcess', time());
+		if(!isset($_SESSION['listaAcess'])) $session->set('listaAcess', [time()]);
+		$session->push('listaAcess', array_merge($session->get('listaAcess'),[time()]));
+
 	
 	echo view('fontesView', $data);
 

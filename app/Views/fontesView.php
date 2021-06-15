@@ -48,6 +48,12 @@ $data = $tabela;
                                 'Deletar');
 
 echo $table->generate($data);
+
+
+$session = session();
+
+echo $session->get('ultimoAcess');
+
 ?>
 
 

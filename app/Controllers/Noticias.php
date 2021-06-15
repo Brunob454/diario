@@ -6,7 +6,7 @@ class Noticias extends BaseController
 {
 
 	//Tabela Noticias
-	public function index()
+	public function read()
 	{
 		$model = new \App\Models\modelNoticias();
 
